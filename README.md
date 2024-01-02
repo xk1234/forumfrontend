@@ -3,6 +3,8 @@
 
 This project is a ReactJS-based frontend for a forum application, styled with Material-UI. It provides a sleek, responsive user interface for forum interactions, including posts, and comments.
 
+ChatGPT was used to create boilerplate, write portions of this README, to debug, and to get the names of types.
+
 ![alt text](post.png)
 ![alt text](login.png)
 
@@ -32,6 +34,9 @@ To set up the project locally, follow these steps:
 npm start
 ```
 
+4. Setup the backend: https://github.com/xk1234/forumbackend.git
+
 
 ## Usage
-After starting the app, you can navigate through the forum, create new threads, post comments, and manage your user profile.
+After starting the app and connecting to the backend, you can navigate through the forum, create new threads, post comments, and manage your user profile.
+

@@ -1,21 +1,41 @@
 import React from 'react';
-import { Card, CardContent, Typography, CardActions, Box } from '@mui/material';
+import { Card, CardContent, Typography, CardActions, Box, Chip } from '@mui/material';
 
+interface User {
+    ID: number,
+    CreatedAt:string,
+    UpdatedAt:string,
+    DeletedAt:null,
+    username:string,
+}
 interface CardItemProps {
+    ID: number,
   title: string;
-  preview: string;
-  date: string;
-  iconUrl: string;
+  content: string;
+  CreatedAt: string;
+  UpdatedAt: string;
+  user: User;
+  isop: boolean;
   onClick: () => void;
+  date: string;
+  topicl: string[];
 }
 
-const CardItem: React.FC<CardItemProps> = ({ title, preview, date, onClick }) => {
+const truncateString = (str:string, num:number) => {
+    if (str.length <= num) {
+      return str;
+    }
+    return str.slice(0, num) + '...';
+  };
+
+const CardItem: React.FC<CardItemProps> = ({ ID, title, content, CreatedAt, onClick, isop, date, topicl }) => {
     return (
       <Card sx={{
         display: 'block',
         fontSize: '14px',
         lineHeight: '20px',
         margin: '0 -10px',
+        backgroundColor: isop ? '#ffeb3b' : 'inherit',
         '&:hover': {
           backgroundColor: '#f5f5f5',
           textDecoration: 'none',
@@ -33,7 +53,7 @@ const CardItem: React.FC<CardItemProps> = ({ title, preview, date, onClick }) =>
               maxHeight: '38px',
               color: '#000',
             }}>
-              {preview}
+              {truncateString(content, 100)}
             </Typography>
           </CardContent>
           <CardActions sx={{
@@ -41,6 +61,18 @@ const CardItem: React.FC<CardItemProps> = ({ title, preview, date, onClick }) =>
             justifyContent: 'space-between',
           }}>
             <Typography>{date}</Typography>
+            <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "10px",
+            marginBottom: "10px",
+          }}
+        >
+          {topicl.map((tag: string, index: number) => (
+            <Chip key={index} label={tag} />
+          ))}
+        </div>
           </CardActions>
         </Box>
       </Card>

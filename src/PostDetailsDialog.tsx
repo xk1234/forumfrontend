@@ -9,6 +9,7 @@ import {
   DialogActions,
   Button,
   TextField,
+  Box
 } from "@mui/material";
 import EditCommentDialog from "./EditCommentDialog";
 import EditPostDialog from "./EditPostDialog";
@@ -137,9 +138,16 @@ const PostDetailsDialog: React.FC<PostDetailsDialogProps> = ({
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
       <DialogTitle>{title}</DialogTitle>
-      <DialogContent>
-        <div
-          style={{
+      <DialogContent
+       sx={{
+        minHeight: '100px', // Adjust this as needed
+        maxHeight: '250px', // Set a maximum height for the content
+        overflowY: 'auto'
+      }}
+      >
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Box
+          sx={{
             display: "flex",
             flexWrap: "wrap",
             gap: "10px",
@@ -149,17 +157,20 @@ const PostDetailsDialog: React.FC<PostDetailsDialogProps> = ({
           {topicl.map((tag: string, index: number) => (
             <Chip key={index} label={tag} />
           ))}
-        </div>
-        <Typography variant="subtitle1">{description}</Typography>
-        <Typography variant="subtitle2">{"Posted: " + date}</Typography>
+        </Box>
         {uid === parseInt(localStorage.getItem("uid") || "0", 10) ? (
-          <>
+          <Box sx={{
+            width: "200px"
+          }}>
             <Button onClick={() => setEditPostDialogOpen(true)}>Edit</Button>
             <Button onClick={handleDelete}>Delete</Button>
-          </>
+          </Box>
         ) : (
           ""
         )}
+        </Box>
+        <Typography variant="subtitle1">{description}</Typography>
+        <Typography variant="subtitle2">{"Posted: " + date}</Typography>
         <Divider sx={{ marginBottom: "1em" }} />
         <Typography variant="body1" gutterBottom>
           {"Comments(" + commentList.length + "): "}
@@ -189,12 +200,12 @@ const PostDetailsDialog: React.FC<PostDetailsDialogProps> = ({
               comment.content}
             {comment.user_id ===
             parseInt(localStorage.getItem("uid") || "0", 10) ? (
-              <>
+              <Box>
                 <Button onClick={() => handleEditClick(comment)}>Edit</Button>
                 <Button onClick={() => handleDeleteComment(comment.ID)}>
                   Delete
                 </Button>
-              </>
+              </Box>
             ) : (
               ""
             )}
@@ -227,7 +238,6 @@ const PostDetailsDialog: React.FC<PostDetailsDialogProps> = ({
             </Typography>
           </>
         )}
-        <Divider sx={{ marginTop: "1em", marginBottom: "1em" }} />
       </DialogContent>
 
       <DialogActions>

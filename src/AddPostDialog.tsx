@@ -68,7 +68,9 @@ const AddPostDialog: React.FC<AddPostDialogProps> = ({ open, onClose, onPostAdde
           type="text"
           fullWidth
           variant="standard"
+          multiline
           value={content}
+          rows={4}
           onChange={(e) => setContent(e.target.value)}
         />
         <TextField

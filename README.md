@@ -1,10 +1,11 @@
 
 # Forum Frontend
 
-This project is a ReactJS-based frontend for a forum application, styled with Material-UI. It provides a sleek, responsive user interface for forum interactions, including posts, and comments.
+This project is a ReactJS and Typescript based frontend for a forum application, styled with Material-UI. It provides a sleek, responsive user interface for viewing posts, and allows CRUD operations to be conducted posts and comments. All posts and comments are viewable for logged out users, but to create, update, and delete posts requires a login. You can create an account by signing up with your username, and afterwards all your posts and comments will be highlighted in yellow, allowing you to update and delete them.
 
 ChatGPT was used to create boilerplate, write portions of this README, to debug, and to get the names of types.
 
+Note: These are old pictures, see the app at https://cvwoforumproject.netlify.app/ or see the video below to see the app in action
 ![alt text](post.png)
 ![alt text](login.png)
 
@@ -37,11 +38,9 @@ To set up the project locally, follow these steps:
 ## Usage
 Note: The frontend has no loading animations and Render takes some time to spin up the backend after it has been idle for a while, so if you are using the deployed version please wait a little the first time you try it out.
 
-
+Try out the app here: https://cvwoforumproject.netlify.app/
 
 https://github.com/xk1234/forumfrontend/assets/31469009/cf414c40-430b-411d-9bbd-23470b91e1e3
-
-
 
 When logged out, you can view all the posts and comments and sort them as well, but cannot post. To change this, you can sign up for a new account using a username as long as it has not been taken.
 

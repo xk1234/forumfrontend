@@ -22,18 +22,15 @@ To set up the project locally, follow these steps:
    ```bash
    git clone https://github.com/xk1234/forumfrontend.git
    cd forumfrontend
-```
-
+    ```
 2. **Install Dependencies**
    ```bash
    npm install
-```
-
+    ```
 3. **Start the project**
    ```bash
-npm start
-```
-
+    npm start
+    ```
 4. Setup the backend: https://github.com/xk1234/forumbackend.git
 
 

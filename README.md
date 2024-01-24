@@ -39,6 +39,10 @@ Note: The frontend has no loading animations and Render takes some time to spin 
 
 
 
+https://github.com/xk1234/forumfrontend/assets/31469009/cf414c40-430b-411d-9bbd-23470b91e1e3
+
+
+
 When logged out, you can view all the posts and comments and sort them as well, but cannot post. To change this, you can sign up for a new account using a username as long as it has not been taken.
 
 After logging in, you will be able to see your posts, which will be highlighted in yellow. Most posts show a preview on the front page, but will expand when you click on it. If logged in, you will be able to submit a comment.

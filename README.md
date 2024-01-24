@@ -32,8 +32,21 @@ To set up the project locally, follow these steps:
    ```bash
     npm start
     ```
-4. The app should work using the hosted online backend, but if you want to use your own setup backend, change all the fetch requests within the app to point to your own backend
+4. Go to http://localhost:3000/ in your web browser
 
+The app should work using the hosted online backend, but if you want to use your own setup backend, change all the fetch requests within the app to point to your own backend. Edit: PostDetailsDialog.tsx, EditPostDialog.tsx, EditCommentDialog.tsx, and App.tsx
+
+Etc: Change all occurrences of this
+```js
+fetch("https://forumapi-dp4z.onrender.com/API_ENDPOINT", {
+```
+
+to this
+```js
+fetch("YOUR_BACKEND_URL/API_ENDPOINT", {
+```
+
+YOUR_BACKEND_URL should be localhost:4000 if using the backend provided with the app: https://github.com/xk1234/forumbackend
 
 ## Usage
 Note: The frontend has no loading animations and Render takes some time to spin up the backend after it has been idle for a while, so if you are using the deployed version please wait a little the first time you try it out.

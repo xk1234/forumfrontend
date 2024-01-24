@@ -38,5 +38,14 @@ npm start
 
 
 ## Usage
-After starting the app and connecting to the backend, you can navigate through the forum, create new threads, post comments, and manage your user profile.
+Note: The frontend has no loading animations and Render takes some time to spin up the backend after it has been idle for a while, so if you are using the deployed version please wait a little the first time you try it out.
 
+
+
+When logged out, you can view all the posts and comments and sort them as well, but cannot post. To change this, you can sign up for a new account using a username as long as it has not been taken.
+
+After logging in, you will be able to see your posts, which will be highlighted in yellow. Most posts show a preview on the front page, but will expand when you click on it. If logged in, you will be able to submit a comment.
+
+If the post is your's, you can edit the contents of the post and even delete it, and the same goes for any comments.
+
+After signing in, you can remain signed in even if you leave the page, since a jwt will be stored in localStorage, but you can logout as well by clicking the logout button.

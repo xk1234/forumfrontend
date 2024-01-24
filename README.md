@@ -32,7 +32,7 @@ To set up the project locally, follow these steps:
    ```bash
     npm start
     ```
-4. Setup the backend: https://github.com/xk1234/forumbackend.git
+4. The app should work using the hosted online backend, but if you want to use your own setup backend, change all the fetch requests within the app to point to your own backend
 
 
 ## Usage
